@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Souhaib Belaala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        h1, h2 {
+            animation: fadeInDown 1.2s ease forwards;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.2em;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+            color: #00d8ff;
+        }
+        .social-links {
+            animation: fadeInUp 1.5s ease forwards;
+        }
+        .social-links a {
+            margin: 0 10px;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .social-links a:hover {
+            background-color: white;
+            color: #2c5364;
+        }
+        .language-switch {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .language-switch button {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-switch">
+        <button onclick="switchLanguage()">English / العربية</button>
+    </div>
+
+    <h1 id="name">Souhaib Belaala</h1>
+    <h2 id="title">مطور ويب</h2>
+    <div class="social-links">
+        <a href="https://www.facebook.com/souhaib.belaala" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/souhaib.belaala?igsh=MWtpMjducmFrb2FsdA==" target="_blank">Instagram</a>
+        <a href="https://www.snapchat.com/add/souhaib.belaala?share_id=HaraP0KU6rI&locale=ar-AA" target="_blank">Snapchat</a>
+    </div>
+
+    <script>
+        let isArabic = true;
+        function switchLanguage() {
+            const name = document.getElementById("name");
+            const title = document.getElementById("title");
+            if (isArabic) {
+                title.textContent = "Web Developer";
+                document.documentElement.lang = "en";
+                document.documentElement.dir = "ltr";
+            } else {
+                title.textContent = "مطور ويب";
+                document.documentElement.lang = "ar";
+                document.documentElement.dir = "rtl";
+            }
+            isArabic = !isArabic;
+        }
+    </script>
+</body>
+</html>
